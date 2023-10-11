@@ -22,7 +22,7 @@ body {
     /* border: 1px solid #ccc; */
 }
 
-.audio-player, .ayat, .sure{
+.audio-player, .ayat-container, .sure{
     width: 80%;
     margin: 10px auto;
     padding: 10px;
@@ -61,7 +61,21 @@ body {
 .sura p:hover{
     background-color: #ccc;
 }
+
 #listen{
     font-size: 18px;
     font-weight: bold;
+}
+
+#next{
+    font-family: 'Noto Serif Bengali', serif;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 150px;
+    margin-left: 120px;
 }

@@ -1,5 +1,15 @@
 const verse = Math.floor(Math.random() * 6236) + 1;
-fetch(`https://api.alquran.cloud/v1/ayah/${verse}/bn.hoque`)
+let prevVerse = verse;
+nextVerse(verse);
+
+document.getElementById("next").addEventListener("click", () => {
+  nextVerse('next');
+});
+
+function nextVerse(verse){
+  verse = verse == 'next' ? prevVerse + 1 : verse;
+  prevVerse = verse;
+  fetch(`https://api.alquran.cloud/v1/ayah/${verse}/bn.hoque`)
   .then((response) => response.json())
   .then((ayatData) => {
     const ayatText = ayatData.data.text;
@@ -22,7 +32,6 @@ fetch(`https://api.alquran.cloud/v1/ayah/${verse}/bn.hoque`)
     document.getElementById("pageNo").innerHTML = page;
     document.getElementById("sijda").innerHTML = sajda;
     document.getElementById("suraNo").innerHTML = surahNumber;
-    document.getElementById("ayatNo").innerHTML = numberOfAyat;
     document.getElementById("totalAyat").innerHTML = numberOfAyat;
     document.getElementById("juz").innerHTML = juz;
 
@@ -36,3 +45,4 @@ fetch(`http://api.alquran.cloud/v1/ayah/${verse}/ar.alafasy`)
     const audioFile = ayatData.data.audio;
     document.getElementById("play").src = audioFile;
 });
+}

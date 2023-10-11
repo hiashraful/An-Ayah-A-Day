@@ -8,12 +8,12 @@
     <title>An Ayah A Day</title>
   </head>
   <body>
-      <div class="container">
-        <h1 id="heading">An Ayat A Day</h1>
-      <div class="ayat">
+    <div class="container">
+      <h1 id="heading">بسم الله الرحمن الرحيم</h1>
+      <div class="ayat-container">
         <p id="ayat">Loading...</p>
-    </div>
-    <div class="sura">
+      </div>
+      <div class="sura">
         <p>সূরা: <span id="suraName">Loading...</span></p>
         <p>আয়াত: <span id="ayatNo">Loading...</span></p>
         <p>পৃষ্ঠা: <span id="pageNo">Loading...</span></p>
@@ -22,15 +22,13 @@
         <p>পারা: <span id="juz">Loading...</span></p>
         <p>মোট আয়াত: <span id="totalAyat">Loading...</span></p>
       </div>
-      <p id="listen" style="text-align: center;">আয়াতটি শুনুন:</p>
+      <button id="next">পরের আয়াত</button>
+      <p id="listen" style="text-align: center">আয়াতটি শুনুন:</p>
       <div class="audio-player">
         <audio controls id="play">
-            <source
-              src=""
-              type="audio/mpeg"
-            />
-            Your browser does not support the audio element.
-          </audio>
+          <source src="" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
       </div>
     </div>
     <script src="script.js"></script>
