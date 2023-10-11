@@ -24,6 +24,7 @@ fetch(`https://api.alquran.cloud/v1/ayah/${verse}/bn.hoque`)
     document.getElementById("suraNo").innerHTML = surahNumber;
     document.getElementById("ayatNo").innerHTML = numberOfAyat;
     document.getElementById("totalAyat").innerHTML = numberOfAyat;
+    document.getElementById("juz").innerHTML = juz;
 
     console.log(surahEnglishName);
     console.log(ayatText);

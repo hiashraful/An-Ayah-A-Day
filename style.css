@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,300&family=Press+Start+2P&family=Tiro+Bangla&display=swap');
 body {
     font-family: 'Noto Serif Bengali', serif;
+    background-color: #f8f7f7;
+    height: 100%;
 }
 
+/* design the heading */
+#heading{
+    background-color:rgba(186,179,218,0.11);
+    border: 1px solid #ccc;
+    width:80%;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 6px;
+   }
 .container{
     width: 400px;
+    height: max-content;
     /* border: 1px solid #ccc; */
 }
 
