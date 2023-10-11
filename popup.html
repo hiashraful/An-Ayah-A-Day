@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dad Jokes</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="ayat">
+        <p id="ayat">Loading...</p>
+    </div>
+    <div class="sura">
+        <p>সূরা: <span id="suraName">Loading...</span></p>
+        <p>আয়াত: <span id="ayatNo">Loading...</span></p>
+        <p>পৃষ্ঠা: <span id="pageNo">Loading...</span></p>
+        <p>সিজদা: <span id="sijda">Loading...</span></p>
+        <p>সূরা নম্বর: <span id="suraNo">Loading...</span></p>
+        <p>মোট আয়াত: <span id="totalAyat">Loading...</span></p>
+      </div>
+      <p id="listen" style="text-align: center;">আয়াতটি শুনুন:</p>
+      <div class="audio-player">
+        <audio controls id="play">
+            <source
+              src=""
+              type="audio/mpeg"
+            />
+            Your browser does not support the audio element.
+          </audio>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
