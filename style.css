@@ -79,3 +79,56 @@ body {
     width: 150px;
     margin-left: 120px;
 }
+
+.search{
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 22px;
+    text-align: center;
+}
+
+.search input{
+    width: 25%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    text-align: center;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+.search input:focus{
+    border: 1px solid #ccc;
+}
+
+.search button{
+    font-family: 'Noto Serif Bengali', serif;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 150px;
+    margin-left: 10px;
+}
+
+#nextSearchBtn{
+    font-family: 'Noto Serif Bengali', serif;
+    /* background-color: aqua; */
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 150px;
+    margin-left: 120px;
+    display: none;
+}

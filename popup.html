@@ -10,6 +10,14 @@
   <body>
     <div class="container">
       <h1 id="heading">بسم الله الرحمن الرحيم</h1>
+      <div class="search">
+        <label for="sura">সূরা: </label>
+        <input type="text" id="sura" placeholder="সূরা নম্বর" />
+        <label for="verseNo">আয়াত: </label>
+        <input type="text" id="verseNo" placeholder="আয়াত নম্বর" />
+        <br>
+        <button id="searchBtn">খুঁজুন</button>
+      </div>
       <div class="ayat-container">
         <p id="ayat">Loading...</p>
       </div>
@@ -23,6 +31,7 @@
         <p>মোট আয়াত: <span id="totalAyat">Loading...</span></p>
       </div>
       <button id="next">পরের আয়াত</button>
+      <button id="nextSearchBtn">পরের আয়াত</button>
       <p id="listen" style="text-align: center">আয়াতটি শুনুন:</p>
       <div class="audio-player">
         <audio controls id="play">

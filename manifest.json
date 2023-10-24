@@ -1,14 +1,19 @@
 {
     "name": "Quran Verse of the Day",
     "version": "0.0.1",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "description": "The An Ayah A Day Chrome Extension is a lightweight browser extension designed to display a random ayat from the Holy Quran with details.",
-    "browser_action": {
-        "default_popup": "popup.html"
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "img/logo16.png",
+            "48": "img/logo48.png",
+            "128": "img/logo128.png"
+        }
     },
     "icons": {
-        "128": "img/logo128.png",
+        "16": "img/logo16.png",
         "48": "img/logo48.png",
-        "16": "img/logo16.png"
+        "128": "img/logo128.png"
     }
 }
