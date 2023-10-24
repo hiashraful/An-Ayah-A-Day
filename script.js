@@ -4,7 +4,7 @@ let prevVerse = verse;
 var searchNumber;
 
 document.getElementById("next").addEventListener("click", () => {
-  nextVerse('next');
+  nextSearchBtn('next');
 });
 
 document.getElementById("searchBtn").addEventListener("click", () => {
@@ -17,7 +17,6 @@ document.getElementById("searchBtn").addEventListener("click", () => {
 
 document.getElementById("nextSearchBtn").addEventListener("click", () => {
   searchNumber++;
-  console.log(searchNumber +"  "+"next click");
   searchNextVerse(searchNumber);
 });
 
@@ -27,8 +26,6 @@ function nextVerse(verse){
   fetch(`https://api.alquran.cloud/v1/ayah/${verse}/bn.hoque`)
   .then((response) => response.json())
   .then((ayatData) => {
-    // searchNumber = ayatData.data.number;
-    console.log(searchNumber + " first generate");
     const ayatText = ayatData.data.text;
     const surahNumber = ayatData.data.surah.number;
     const surahName = ayatData.data.surah.name;
@@ -51,9 +48,15 @@ function nextVerse(verse){
     document.getElementById("suraNo").innerHTML = surahNumber;
     document.getElementById("totalAyat").innerHTML = numberOfAyat;
     document.getElementById("juz").innerHTML = juz;
-    
-    console.log(surahEnglishName +"default");
-    console.log(ayatText);
+  });
+
+  //fetch arabic ayat
+  fetch(`https://api.alquran.cloud/v1/ayah/${verse}`)
+  .then((response) => response.json())
+  .then((ayatData) => {
+    const ayatText = ayatData.data.text;
+    const numberInSurah = ayatData.data.numberInSurah;
+    document.getElementById("arabicAyat").innerHTML = ayatText + " (" + numberInSurah + ")";
   });
   
   fetch(`http://api.alquran.cloud/v1/ayah/${verse}/ar.alafasy`)
@@ -69,12 +72,9 @@ function searchAyat(sura, verse){
   .then((response) => response.json())
   .then((ayatData) => {
     searchNumber = ayatData.data.number;
-    console.log(searchNumber + "  "+"search button generate");
     const ayatText = ayatData.data.text;
     const num = ayatData.data.number;
-    console.log(num);
     const surahNumber = ayatData.data.surah.number;
-    console.log(surahNumber+" generate on search ");
     const surahName = ayatData.data.surah.name;
     const surahEnglishName = ayatData.data.surah.englishName;
     const numberOfAyat = ayatData.data.surah.numberOfAyahs;
@@ -95,9 +95,14 @@ function searchAyat(sura, verse){
     document.getElementById("suraNo").innerHTML = surahNumber;
     document.getElementById("totalAyat").innerHTML = numberOfAyat;
     document.getElementById("juz").innerHTML = juz;
-    
-    console.log(surahEnglishName);
-    console.log(ayatText);
+  });
+
+  //fetch arabic ayat
+  fetch(`https://api.alquran.cloud/v1/ayah/${sura}:${verse}`)
+  .then((response) => response.json())
+  .then((ayatData) => {
+    const ayatText = ayatData.data.text;
+    document.getElementById("arabicAyat").innerHTML = ayatText;
   });
 }
 
@@ -106,7 +111,6 @@ function searchNextVerse(verse){
   .then((response) => response.json())
   .then((ayatData) => {
     searchNumber = ayatData.data.number;
-    console.log(searchNumber + "  "+"next button click generate");
     const ayatText = ayatData.data.text;
     const surahNumber = ayatData.data.surah.number;
     const surahName = ayatData.data.surah.name;
@@ -129,9 +133,25 @@ function searchNextVerse(verse){
     document.getElementById("suraNo").innerHTML = surahNumber;
     document.getElementById("totalAyat").innerHTML = numberOfAyat;
     document.getElementById("juz").innerHTML = juz;
-    
-    console.log(surahEnglishName +"default");
-    console.log(ayatText);
   });
+  //fetch arabic ayat
+  fetch(`https://api.alquran.cloud/v1/ayah/${verse}`)
+  .then((response) => response.json())
+  .then((ayatData) => {
+    const ayatText = ayatData.data.text;
+    document.getElementById("arabicAyat").innerHTML = ayatText;
+  });
+
 }
 nextVerse(verse);
+
+// change tab
+document.getElementById("arabic").addEventListener("click", () => {
+  document.getElementById("ayat").style.display = "none";
+  document.getElementById("arabicAyat").style.display = "block";
+});
+
+document.getElementById("bangla").addEventListener("click", () => {
+  document.getElementById("ayat").style.display = "block";
+  document.getElementById("arabicAyat").style.display = "none";
+});

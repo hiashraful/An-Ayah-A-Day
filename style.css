@@ -132,3 +132,45 @@ body {
     margin-left: 120px;
     display: none;
 }
+
+.ayat-container{
+    position: relative;
+    min-height: 60px;
+}
+
+.tab-btn{
+    display: flex;
+    position: absolute;
+    top: 0;
+}
+
+.tab-btn button{
+    font-family: 'Noto Serif Bengali', serif;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    width: 155px;
+}
+
+.tab-btn button:hover{
+    background-color: #ccc;
+}
+
+.tab-btn button:nth-child(2){
+    margin-left: 10px;
+}
+
+.ayat-container p{
+    margin-top: 50px;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 20px;
+}
+
+#arabicAyat{
+    display: none;
+}
