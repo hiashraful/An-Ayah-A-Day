@@ -149,9 +149,26 @@ nextVerse(verse);
 document.getElementById("arabic").addEventListener("click", () => {
   document.getElementById("ayat").style.display = "none";
   document.getElementById("arabicAyat").style.display = "block";
+  document.getElementById("arabic").style.backgroundColor = "#ccc";
+  document.getElementById("bangla").style.backgroundColor = "#fff";
 });
 
 document.getElementById("bangla").addEventListener("click", () => {
   document.getElementById("ayat").style.display = "block";
   document.getElementById("arabicAyat").style.display = "none";
+  document.getElementById("bangla").style.backgroundColor = "#ccc";
+  document.getElementById("arabic").style.backgroundColor = "#fff";
+});
+
+document.getElementById("takeScreenshot").addEventListener("click", () => {
+  const ayatContainer = document.querySelector('.ayat-container');
+
+  html2canvas(ayatContainer).then(canvas => {
+    // Convert canvas to image and set it as the href for a downloadable link
+    const image = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = image;
+    link.download = 'ayat_screenshot.png';
+    link.click();
+  });
 });
